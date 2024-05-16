@@ -1,0 +1,40 @@
+#root {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+body{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  font-family: 'Poppins', Helvetica, Arial, Lucida, sans-serif;
+}
+
+.searchbar:focus{
+  outline: none;
+}
+
+.searchbar{
+  background-image: url('./assets/arrow-down-sign-to-navigate\ \(1\).png');
+}
+
+
+
+.input-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid gray;
+  border-radius: 16px;
+  max-width: 60%;
+}
+
+.tags-container{
+  padding: 10px;
+}
+
+.highlight {
+  font-weight: bold;
+  color: rgb(5, 5, 5); /* Vurgu rengini istediğiniz gibi değiştirebilirsiniz */
+}
