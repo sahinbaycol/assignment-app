@@ -83,6 +83,20 @@ function App() {
     textStyle: {
       fontSize: "20px",
     } as CSSProperties,
+    avatarStyle:{
+      marginLeft:"60px",
+      width:"80px",
+      height:"80px",
+    } as CSSProperties,
+    skeletonStyle:{
+      display:"flex",
+      alignItems:"center",
+      padding:"20px"
+    } as CSSProperties,
+    skeletonsContainerStyle:{
+      display:"flex",
+      flexDirection:"column"
+    } as CSSProperties
   };
 
   const fetchData = async () => {
@@ -201,7 +215,11 @@ function App() {
         />
         <img
           onClick={() => {
-            handleSearch();
+            setLoading(true);
+            setTimeout(() => {
+              handleSearch();
+            }, 1000);
+            
           }}
           style={styles.dropdownIcon}
           src={dropdownIcon}
@@ -209,7 +227,12 @@ function App() {
       </div>
       <div style={styles.listContainerStyle}>
         {isLoading ? (
-          <Skeleton loading={isLoading}></Skeleton>
+          <div style={styles.skeletonsContainerStyle}>
+            <Skeleton style={styles.skeletonStyle} title={false} paragraph={{rows:2,width:[200,200]}} avatar={{shape:"square",style:styles.avatarStyle}} loading={isLoading}></Skeleton>
+            <Skeleton style={styles.skeletonStyle} title={false} paragraph={{rows:2,width:[200,200]}} avatar={{shape:"square",style:styles.avatarStyle}} loading={isLoading}></Skeleton>
+            <Skeleton style={styles.skeletonStyle} title={false} paragraph={{rows:2,width:[200,200]}} avatar={{shape:"square",style:styles.avatarStyle}} loading={isLoading}></Skeleton>
+            <Skeleton style={styles.skeletonStyle} title={false} paragraph={{rows:2,width:[200,200]}} avatar={{shape:"square",style:styles.avatarStyle}} loading={isLoading}></Skeleton>
+          </div>
         ) : filteredResults.length > 0 ? (
           filteredResults.map((item: any, index) => {
             return (
