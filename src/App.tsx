@@ -232,7 +232,7 @@ function App() {
             <Skeleton style={styles.skeletonStyle} title={false} paragraph={{rows:2,width:[200,200]}} avatar={{shape:"square",style:styles.avatarStyle}} loading={isLoading}></Skeleton>
             <Skeleton style={styles.skeletonStyle} title={false} paragraph={{rows:2,width:[200,200]}} avatar={{shape:"square",style:styles.avatarStyle}} loading={isLoading}></Skeleton>
             <Skeleton style={styles.skeletonStyle} title={false} paragraph={{rows:2,width:[200,200]}} avatar={{shape:"square",style:styles.avatarStyle}} loading={isLoading}></Skeleton>
-            
+            <div></div>
           </div>
         ) : filteredResults.length > 0 ? (
           filteredResults.map((item: any, index) => {
